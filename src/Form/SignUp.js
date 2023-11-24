@@ -1,6 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 const SignUp = () => {
+  const handleSignUpClick = () => {
+    console.log('Sign Up button clicked');
+  };
+
   return (
     <div className='form-parent'>
       <form>
@@ -13,10 +17,12 @@ const SignUp = () => {
           Password:
           <input type="password" name='password' placeholder='Enter Your password' className='input-field' />
         </label>
-        <button type='submit'>Submit</button>
+        <button type='button' onClick={handleSignUpClick}>
+          Sign Up
+        </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default SignUp
+export default SignUp;

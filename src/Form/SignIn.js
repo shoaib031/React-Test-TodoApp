@@ -1,23 +1,30 @@
-import React from 'react'
-import './style.css'
+import React from 'react';
+import './style.css';
 
 const SignIn = () => {
+  const handleSignInClick = (e) => {
+    e.preventDefault();
+    console.log("Sign In button clicked");
+  };
+
   return (
     <div className='form-parent'>
       <form>
         <h1>Sign In Form</h1>
         <label>
           Email:
-          <input type="email" name='email' placeholder='Enter Your Email' className='input-field'/>
+          <input type="email" name='email' placeholder='Enter Your Email' className='input-field' />
         </label>
         <label>
           Password:
           <input type="password" name='password' placeholder='Enter Your password' className='input-field' />
         </label>
-        <button type='submit'>Submit</button>
+        <button type='submit' onClick={handleSignInClick}>
+          Sign In
+        </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default SignIn
+export default SignIn;
