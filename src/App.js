@@ -1,10 +1,10 @@
 import React from 'react';
-import SignUpComponent from './Router/SignUp';
-import SignInComponent from './Router/SignIn';
-import AddTodo from './Router/AddTodo';
-import UpdateTodo from './Router/UpdateTodo';
-import DeleteTodo from './Router/DeleteTodo';
-import SignOutComponent from './Router/SignOut';
+import SignUpComponent from './Form/SignUp';
+import SignInComponent from './Form/SignIn';
+import AddTodo from './Button/AddTodo';
+import UpdateTodo from './Button/UpdateTodo';
+import DeleteTodo from './Button/DeleteTodo';
+import SignOutComponent from './Form/SignOut';
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
