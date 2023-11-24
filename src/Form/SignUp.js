@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
-    name : '',
+    name: '',
     email: '',
     password: '',
   });
@@ -20,6 +20,8 @@ const SignUp = () => {
     console.log('Name:', formData.name);
     console.log('Email:', formData.email);
     console.log('Password:', formData.password);
+
+    localStorage.setItem('formData', JSON.stringify(formData));
   };
 
   return (
@@ -29,17 +31,31 @@ const SignUp = () => {
         <label>
           Name:
           <input
-            type="text" name='name' placeholder='Enter Your Name' className='input-field' onChange={handleInputChange}
+            type="text"
+            name='name'
+            placeholder='Enter Your Name'
+            className='input-field'
+            onChange={handleInputChange}
           />
         </label>
         <label>
           Email:
-          <input type="email" name='email' placeholder='Enter Your Email' className='input-field' onChange={handleInputChange}
+          <input
+            type="email"
+            name='email'
+            placeholder='Enter Your Email'
+            className='input-field'
+            onChange={handleInputChange}
           />
         </label>
         <label>
           Password:
-          <input type="password" name='password' placeholder='Enter Your password' className='input-field' onChange={handleInputChange}
+          <input
+            type="password"
+            name='password'
+            placeholder='Enter Your password'
+            className='input-field'
+            onChange={handleInputChange}
           />
         </label>
         <button type='button' onClick={handleSignUpClick}>
