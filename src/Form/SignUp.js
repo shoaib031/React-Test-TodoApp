@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
+    name: localStorage.getItem('Name') || '',
+    email: localStorage.getItem('Email') || '',
+    password: localStorage.getItem('Password') || '',
   });
 
   const handleInputChange = (e) => {
@@ -17,11 +17,12 @@ const SignUp = () => {
 
   const handleSignUpClick = () => {
     console.log('Sign Up button clicked');
-    console.log('Name:', formData.name);
-    console.log('Email:', formData.email);
-    console.log('Password:', formData.password);
-
-    localStorage.setItem('formData', JSON.stringify(formData));
+    console.log(formData.name);
+    console.log(formData.email);
+    console.log(formData.password);
+    localStorage.setItem('Name', formData.name);
+    localStorage.setItem('Email', formData.email);
+    localStorage.setItem('Password', formData.password);
   };
 
   return (
@@ -36,6 +37,7 @@ const SignUp = () => {
             placeholder='Enter Your Name'
             className='input-field'
             onChange={handleInputChange}
+            value={formData.name}
           />
         </label>
         <label>
@@ -46,6 +48,7 @@ const SignUp = () => {
             placeholder='Enter Your Email'
             className='input-field'
             onChange={handleInputChange}
+            value={formData.email}
           />
         </label>
         <label>
@@ -56,6 +59,7 @@ const SignUp = () => {
             placeholder='Enter Your password'
             className='input-field'
             onChange={handleInputChange}
+            value={formData.password}
           />
         </label>
         <button type='button' onClick={handleSignUpClick}>
