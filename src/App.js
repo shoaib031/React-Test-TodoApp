@@ -51,17 +51,22 @@ const App = () => {
               <li>
                 <Link to="/signin">Sign In</Link>
               </li>
+         
               <li>
                 <Link to="/signout" onClick={handleSignOutClick}>
                   Sign Out
                 </Link>
               </li>
+            
+              
             </>
           )}
           {isSignedUp && !isSignedIn && <Navigate to="/signin" replace state={formData} />}
           {isSignedIn && (
             <>
-              <li>
+             {isSignedIn && 
+            <div>
+            <li>
                 <Link to="/addtodo">Add Todo</Link>
               </li>
               <li>
@@ -70,6 +75,13 @@ const App = () => {
               <li>
                 <Link to="/deletetodo">Delete Todo</Link>
               </li>
+              <li>
+                <Link to="/signout" onClick={handleSignOutClick}>
+                  Sign Out
+                </Link>
+              </li>
+            </div>
+             }
             </>
           )}
         </ul>
@@ -82,7 +94,7 @@ const App = () => {
         />
         <Route
           path="/signin"
-          element={<SignInComponent onSignInSuccess={handleSignInSuccess} />}
+          element={<SignInComponent isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} onSignInSuccess={handleSignInSuccess} />}
         />
         <Route path="/signout" element={<SignOutComponent />} />
         <Route path="/addtodo" element={<AddTodo />} />

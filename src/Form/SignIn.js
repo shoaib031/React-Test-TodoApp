@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const SignIn = ({ onSignInSuccess }) => {
+const SignIn = ({ onSignInSuccess,setIsSignedIn }) => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -33,6 +33,7 @@ const SignIn = ({ onSignInSuccess }) => {
     ) {
       onSignInSuccess(formData);
       navigate('/');
+      setIsSignedIn(true)
     } else {
 
       alert('Please enter the information you provided during Sign-Up for the Sign-In here. Thank you!.');
