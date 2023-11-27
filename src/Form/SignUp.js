@@ -1,6 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './style.css';
 
 const SignUp = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: localStorage.getItem('Name') || '',
     email: localStorage.getItem('Email') || '',
@@ -23,6 +27,14 @@ const SignUp = () => {
     localStorage.setItem('Name', formData.name);
     localStorage.setItem('Email', formData.email);
     localStorage.setItem('Password', formData.password);
+
+    setFormData({
+      name: '',
+      email: '',
+      password: '',
+    });
+
+    navigate('/signin');
   };
 
   return (
@@ -31,36 +43,15 @@ const SignUp = () => {
         <h1>Sign Up Form</h1>
         <label>
           Name:
-          <input
-            type="text"
-            name='name'
-            placeholder='Enter Your Name'
-            className='input-field'
-            onChange={handleInputChange}
-            value={formData.name}
-          />
+          <input type="text" name='name' placeholder='Enter Your Name' className='input-field' onChange={handleInputChange} value={formData.name} />
         </label>
         <label>
           Email:
-          <input
-            type="email"
-            name='email'
-            placeholder='Enter Your Email'
-            className='input-field'
-            onChange={handleInputChange}
-            value={formData.email}
-          />
+          <input type="email" name='email' placeholder='Enter Your Email' className='input-field' onChange={handleInputChange} value={formData.email} />
         </label>
         <label>
           Password:
-          <input
-            type="password"
-            name='password'
-            placeholder='Enter Your password'
-            className='input-field'
-            onChange={handleInputChange}
-            value={formData.password}
-          />
+          <input type="password" name='password' placeholder='Enter Your password' className='input-field' onChange={handleInputChange} value={formData.password} />
         </label>
         <button type='button' onClick={handleSignUpClick}>
           Sign Up

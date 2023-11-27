@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const SignIn = () => {
+const SignIn = ({ onSignInSuccess }) => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
-    name: localStorage.getItem('Name') || '',
-    email: localStorage.getItem('Email') || '',
-    password: localStorage.getItem('Password') || '',
+    name: '',
+    email: '',
+    password: '',
   });
 
   const handleInputChange = (e) => {
@@ -16,13 +19,24 @@ const SignIn = () => {
   };
 
   const handleSignInClick = () => {
-    console.log('Sign In button clicked');
-    console.log(formData.name);
-    console.log(formData.email);
-    console.log(formData.password);
-    localStorage.setItem('Name', formData.name);
-    localStorage.setItem('Email', formData.email);
-    localStorage.setItem('Password', formData.password);
+
+    const storedData = {
+      name: localStorage.getItem('Name') || '',
+      email: localStorage.getItem('Email') || '',
+      password: localStorage.getItem('Password') || '',
+    };
+
+    if (
+      formData.name === storedData.name &&
+      formData.email === storedData.email &&
+      formData.password === storedData.password
+    ) {
+      onSignInSuccess(formData);
+      navigate('/');
+    } else {
+
+      alert('Please enter the information you provided during Sign-Up for the Sign-In here. Thank you!.');
+    }
   };
 
   return (
@@ -31,36 +45,15 @@ const SignIn = () => {
         <h1>Sign In Form</h1>
         <label>
           Name:
-          <input
-            type="text"
-            name='name'
-            placeholder='Enter Your Name'
-            className='input-field'
-            onChange={handleInputChange}
-            value={formData.name}
-          />
+          <input type="text" name='name' placeholder='Enter Your Name' className='input-field' onChange={handleInputChange} value={formData.name} />
         </label>
         <label>
           Email:
-          <input
-            type="email"
-            name='email'
-            placeholder='Enter Your Email'
-            className='input-field'
-            onChange={handleInputChange}
-            value={formData.email}
-          />
+          <input type="email" name='email' placeholder='Enter Your Email' className='input-field' onChange={handleInputChange} value={formData.email}/>
         </label>
         <label>
           Password:
-          <input
-            type="password"
-            name='password'
-            placeholder='Enter Your password'
-            className='input-field'
-            onChange={handleInputChange}
-            value={formData.password}
-          />
+          <input type="password" name='password' placeholder='Enter Your password' className='input-field' onChange={handleInputChange} value={formData.password}/>
         </label>
         <button type='button' onClick={handleSignInClick}>
           Sign In

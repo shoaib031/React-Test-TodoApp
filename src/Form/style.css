@@ -1,57 +1,58 @@
    /* form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #f4f4f4;
-    border-radius: 8px;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  h1 {
-    text-align: center;
-    color: #333;
-  }
-  
-  label {
-    display: block;
-    margin: 15px 0;
-  }
-  
-  .input-field {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  input[type="submit"] {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out; 
-}
+     max-width: 400px;
+     margin: 0 auto;
+     padding: 20px;
+     background: #f4f4f4;
+     border-radius: 8px;
+     transition: background-color 0.3s ease-in-out;
+   }
 
-input[type="submit"]:hover {
-    background-color: #45a049;
-}
+   h1 {
+     text-align: center;
+     color: #333;
+   }
 
-button{
-  background-color: green;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 15px;
-  margin-left: 26%;
-  width: 200px;
-}
-button:hover{
-  background-color: #333;
-  color: white;
-  
-} */
+   label {
+     display: block;
+     margin: 15px 0;
+   }
+
+   .input-field {
+     width: 100%;
+     padding: 10px;
+     margin-top: 5px;
+     margin-bottom: 15px;
+     box-sizing: border-box;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+   }
+
+   input[type="submit"] {
+     background-color: #4caf50;
+     color: white;
+     padding: 10px 15px;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+     transition: background-color 0.3s ease-in-out;
+   }
+
+   input[type="submit"]:hover {
+     background-color: #45a049;
+   }
+
+   button {
+     background-color: green;
+     color: white;
+     border: none;
+     padding: 10px;
+     border-radius: 15px;
+     margin-left: 26%;
+     width: 200px;
+   }
+
+   button:hover {
+     background-color: #333;
+     color: white;
+     cursor: pointer;
+   } */
