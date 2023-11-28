@@ -4,7 +4,7 @@ const AddTodo = () => {
   const [newTodo, setNewTodo] = useState('');
 
   const handleAddTodo = () => {
-    console.log(`Adding todo: ${newTodo}`);
+    console.log(newTodo);
   };
 
   return (

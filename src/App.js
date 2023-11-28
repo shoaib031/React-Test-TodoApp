@@ -51,37 +51,37 @@ const App = () => {
               <li>
                 <Link to="/signin">Sign In</Link>
               </li>
-         
+
               <li>
                 <Link to="/signout" onClick={handleSignOutClick}>
                   Sign Out
                 </Link>
               </li>
-            
-              
+
+
             </>
           )}
           {isSignedUp && !isSignedIn && <Navigate to="/signin" replace state={formData} />}
           {isSignedIn && (
             <>
-             {isSignedIn && 
-            <div>
-            <li>
-                <Link to="/addtodo">Add Todo</Link>
-              </li>
-              <li>
-                <Link to="/updatetodo">Update Todo</Link>
-              </li>
-              <li>
-                <Link to="/deletetodo">Delete Todo</Link>
-              </li>
-              <li>
-                <Link to="/signout" onClick={handleSignOutClick}>
-                  Sign Out
-                </Link>
-              </li>
-            </div>
-             }
+              {isSignedIn &&
+                <div>
+                  <li>
+                    <Link to="/addtodo">Add Todo</Link>
+                  </li>
+                  <li>
+                    <Link to="/updatetodo">Update Todo</Link>
+                  </li>
+                  <li>
+                    <Link to="/deletetodo">Delete Todo</Link>
+                  </li>
+                  <li>
+                    <Link to="/signout" onClick={handleSignOutClick}>
+                      Sign Out
+                    </Link>
+                  </li>
+                </div>
+              }
             </>
           )}
         </ul>
